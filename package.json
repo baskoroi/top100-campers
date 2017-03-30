@@ -1,0 +1,26 @@
+{
+  "name": "top100-campers",
+  "version": "1.0.0",
+  "description": "Leaderboard showing 100 users of FreeCodeCamp with highest points",
+  "main": "index.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/lite-server"
+  },
+  "keywords": [],
+  "author": "Baskoro Indrayana <baskoroindrayana@outlook.com>",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "eslint": "^3.18.0",
+    "eslint-config-google": "^0.7.1",
+    "lite-server": "^2.3.0",
+    "webpack": "^2.3.2"
+  }
+}
