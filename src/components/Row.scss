@@ -1,0 +1,27 @@
+$pic-width: 48px;
+
+tr.camper {
+    height: 50px;
+
+    img.camper-pic {
+        display: block;
+        margin-right: 8px;
+        float: left;
+        width: $pic-width;
+        border-radius: $pic-width / 2;
+    }
+
+    td:nth-child(1),
+    td:nth-child(2) a,
+    td:nth-child(3),
+    td:nth-child(4) {
+        line-height: 46px;
+    }
+
+    border-bottom: 1px solid #ddd;
+}
+
+tr.camper>td:nth-child(3),
+tr.camper>td:nth-child(4) {
+    text-align: center;
+}

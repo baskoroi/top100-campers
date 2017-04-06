@@ -6,8 +6,22 @@ import './Table.scss'
 
 class Table extends Component {
     render() {
+        const rows = Array.from(Array(10).keys()).map((el, id) => {
+            return (
+                <Row 
+                    id={id}
+                    key={id}
+                    img={'https://avatars.githubusercontent.com/u/9335367?v=3'}
+                    name={'asdf'}
+                    lastMonthPoints={123}
+                    allTimePoints={1234} />
+            )
+        })
+
+        console.log(rows)
+
         return (
-            <table>
+            <table className="table camper-table">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -17,37 +31,7 @@ class Table extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    <Row 
-                        id={1}
-                        name={'asdf'}
-                        lastMonthPoints={123}
-                        allTimePoints={1234} />
-                    <Row 
-                        id={1}
-                        name={'asdf'}
-                        lastMonthPoints={123}
-                        allTimePoints={1234} />
-                    <Row 
-                        id={1}
-                        name={'asdf'}
-                        lastMonthPoints={123}
-                        allTimePoints={1234} />
-
-                    <Row 
-                        id={1}
-                        name={'asdf'}
-                        lastMonthPoints={123}
-                        allTimePoints={1234} />
-                    <Row 
-                        id={1}
-                        name={'asdf'}
-                        lastMonthPoints={123}
-                        allTimePoints={1234} />
-                    <Row 
-                        id={1}
-                        name={'asdf'}
-                        lastMonthPoints={123}
-                        allTimePoints={1234} />
+                    {rows}
                 </tbody>
             </table>
         )

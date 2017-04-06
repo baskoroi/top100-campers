@@ -1,4 +1,15 @@
-table {
+table.camper-table {
     width: 95%;
     margin: 0 auto;
+
+    thead {
+        font-size: 12pt;
+
+        th:nth-child(3), 
+        th:nth-child(4) {
+            text-align: center;
+        }
+
+        border-bottom: 2px solid;
+    }
 }
