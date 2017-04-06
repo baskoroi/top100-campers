@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import Row from './Row'
 
@@ -11,26 +12,29 @@ class Table extends Component {
         this.state = {
             board: []
         }
+        this.allTimeUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/alltime'
     }
 
     componentWillMount() {
-        
+        axios.get(this.allTimeUrl).
+            then((response) => {
+                this.setState({ board: response.data })
+            })
     }
 
     render() {
-        const rows = this.state.board.map((el, id) => {
+        const rows = this.state.board.map((camper, id) => {
+            let { username, img, alltime, recent } = camper
             return (
                 <Row 
                     id={id+1}
-                    key={'asdf'}
-                    img={'https://avatars.githubusercontent.com/u/9335367?v=3'}
-                    name={'asdf'}
-                    lastMonthPoints={123}
-                    allTimePoints={1234} />
+                    key={username}
+                    img={img}
+                    name={username}
+                    lastMonthPoints={recent}
+                    allTimePoints={alltime} />
             )
         })
-
-        console.log(rows)
 
         return (
             <table className="table camper-table">
