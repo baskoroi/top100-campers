@@ -9457,7 +9457,7 @@ var _react = __webpack_require__(52);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(190);
+__webpack_require__(187);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11491,7 +11491,20 @@ function isnan (val) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(188)))
 
 /***/ }),
-/* 85 */,
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(86)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "div.navbar-header {\n  width: 100%;\n  height: 48px;\n  margin: 0 auto;\n  overflow: hidden; }\n  div.navbar-header img#logo {\n    height: 40px;\n    margin: 4px;\n    float: left; }\n  div.navbar-header h1#logo-name {\n    font-family: monospace;\n    margin: 4px;\n    float: right; }\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -24298,7 +24311,32 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 187 */,
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(85);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(185)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./Navbar.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./Navbar.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
 /* 188 */
 /***/ (function(module, exports) {
 
@@ -24325,46 +24363,6 @@ try {
 module.exports = g;
 
 
-/***/ }),
-/* 189 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(86)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "div.navbar-header {\n  width: 100%;\n  height: 48px;\n  margin: 0 auto;\n  overflow: hidden; }\n  div.navbar-header img#logo {\n    height: 40px;\n    margin: 4px;\n    float: left; }\n  div.navbar-header h1#logo-name {\n    font-family: monospace;\n    margin: 4px;\n    float: right; }\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 190 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(189);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(185)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./navbar.scss", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./navbar.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
 /***/ })
 /******/ ]);
-//# sourceMappingURL=bundle.map
+//# sourceMappingURL=app.map
