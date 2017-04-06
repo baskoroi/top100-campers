@@ -9920,19 +9920,27 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Table = function (_Component) {
     _inherits(Table, _Component);
 
-    function Table() {
+    function Table(props, context) {
         _classCallCheck(this, Table);
 
-        return _possibleConstructorReturn(this, (Table.__proto__ || Object.getPrototypeOf(Table)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Table.__proto__ || Object.getPrototypeOf(Table)).call(this, props, context));
+
+        _this.state = {
+            board: []
+        };
+        return _this;
     }
 
     _createClass(Table, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {}
+    }, {
         key: 'render',
         value: function render() {
-            var rows = Array.from(Array(10).keys()).map(function (el, id) {
+            var rows = this.state.board.map(function (el, id) {
                 return _react2.default.createElement(_Row2.default, {
-                    id: id,
-                    key: id,
+                    id: id + 1,
+                    key: 'asdf',
                     img: 'https://avatars.githubusercontent.com/u/9335367?v=3',
                     name: 'asdf',
                     lastMonthPoints: 123,

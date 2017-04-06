@@ -5,12 +5,24 @@ import Row from './Row'
 import './Table.scss'
 
 class Table extends Component {
+    constructor(props, context) {
+        super(props, context)
+
+        this.state = {
+            board: []
+        }
+    }
+
+    componentWillMount() {
+        
+    }
+
     render() {
-        const rows = Array.from(Array(10).keys()).map((el, id) => {
+        const rows = this.state.board.map((el, id) => {
             return (
                 <Row 
-                    id={id}
-                    key={id}
+                    id={id+1}
+                    key={'asdf'}
                     img={'https://avatars.githubusercontent.com/u/9335367?v=3'}
                     name={'asdf'}
                     lastMonthPoints={123}
