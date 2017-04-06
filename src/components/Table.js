@@ -13,10 +13,11 @@ class Table extends Component {
             board: []
         }
         this.allTimeUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/alltime'
+        this.recentUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/recent'
     }
 
     componentWillMount() {
-        axios.get(this.allTimeUrl).
+        axios.get(this.recentUrl).
             then((response) => {
                 this.setState({ board: response.data })
             })
@@ -31,7 +32,7 @@ class Table extends Component {
                     key={username}
                     img={img}
                     name={username}
-                    lastMonthPoints={recent}
+                    recentPoints={recent}
                     allTimePoints={alltime} />
             )
         })

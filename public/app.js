@@ -9933,6 +9933,7 @@ var Table = function (_Component) {
             board: []
         };
         _this.allTimeUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/alltime';
+        _this.recentUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/recent';
         return _this;
     }
 
@@ -9941,7 +9942,7 @@ var Table = function (_Component) {
         value: function componentWillMount() {
             var _this2 = this;
 
-            _axios2.default.get(this.allTimeUrl).then(function (response) {
+            _axios2.default.get(this.recentUrl).then(function (response) {
                 _this2.setState({ board: response.data });
             });
         }
@@ -9959,7 +9960,7 @@ var Table = function (_Component) {
                     key: username,
                     img: img,
                     name: username,
-                    lastMonthPoints: recent,
+                    recentPoints: recent,
                     allTimePoints: alltime });
             });
 
@@ -10120,7 +10121,7 @@ var Row = function (_Component) {
                 id = _props.id,
                 img = _props.img,
                 name = _props.name,
-                lastMonthPoints = _props.lastMonthPoints,
+                recentPoints = _props.recentPoints,
                 allTimePoints = _props.allTimePoints;
 
             return _react2.default.createElement(
@@ -10144,7 +10145,7 @@ var Row = function (_Component) {
                 _react2.default.createElement(
                     'td',
                     null,
-                    lastMonthPoints
+                    recentPoints
                 ),
                 _react2.default.createElement(
                     'td',

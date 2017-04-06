@@ -4,7 +4,7 @@ import './Row.scss'
 
 class Row extends Component {
     render() {
-        const { id, img, name, lastMonthPoints, allTimePoints } = this.props
+        const { id, img, name, recentPoints, allTimePoints } = this.props
         return (
             <tr className="camper">
                 <td>{id}</td>
@@ -12,7 +12,7 @@ class Row extends Component {
                     <img className="camper-pic" src={img} alt="" />
                     <a href={'https://freecodecamp.com/' + name}>{name}</a>
                 </td>
-                <td>{lastMonthPoints}</td>
+                <td>{recentPoints}</td>
                 <td>{allTimePoints}</td>
             </tr>
         )
