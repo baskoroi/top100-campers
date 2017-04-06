@@ -5,6 +5,11 @@ table.camper-table {
     thead {
         font-size: 12pt;
 
+        th.cell-showing {
+            text-align: right;
+            border-bottom: 0;
+        }
+
         th:nth-child(3), 
         th:nth-child(4) {
             text-align: center;

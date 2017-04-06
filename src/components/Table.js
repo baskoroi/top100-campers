@@ -14,6 +14,7 @@ class Table extends Component {
         }
         this.allTimeUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/alltime'
         this.recentUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/recent'
+        this.isRecent = true
     }
 
     componentWillMount() {
@@ -30,6 +31,7 @@ class Table extends Component {
     showCampers(isRecent) {
         this.getTopCampers(isRecent ? 
             this.recentUrl : this.allTimeUrl)
+        this.isRecent = isRecent
     }
 
     render() {
@@ -50,10 +52,26 @@ class Table extends Component {
             <table className="table camper-table">
                 <thead>
                     <tr>
+                        <td></td>
+                        <th className="cell-showing" colSpan="3">Showing: {this.isRecent ? 
+                            'Recent top 100 campers (past 30 days)' :
+                            'All time 100 campers'}</th>
+                    </tr>
+                    <tr>
                         <th>#</th>
                         <th>Camper Name</th>
-                        <th><a href="#" onClick={this.showCampers.bind(this, true)}>Points in past 30 days</a></th>
-                        <th><a href="#" onClick={this.showCampers.bind(this, false)}>All time points</a></th>
+                        <th>
+                            <a href="#" 
+                                onClick={this.showCampers.bind(this, true)}>
+                                Points in past 30 days
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#" 
+                                onClick={this.showCampers.bind(this, false)}>
+                                All time points
+                            </a>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>

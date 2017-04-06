@@ -9934,6 +9934,7 @@ var Table = function (_Component) {
         };
         _this.allTimeUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/alltime';
         _this.recentUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/recent';
+        _this.isRecent = true;
         return _this;
     }
 
@@ -9955,6 +9956,7 @@ var Table = function (_Component) {
         key: 'showCampers',
         value: function showCampers(isRecent) {
             this.getTopCampers(isRecent ? this.recentUrl : this.allTimeUrl);
+            this.isRecent = isRecent;
         }
     }, {
         key: 'render',
@@ -9983,6 +9985,17 @@ var Table = function (_Component) {
                     _react2.default.createElement(
                         'tr',
                         null,
+                        _react2.default.createElement('td', null),
+                        _react2.default.createElement(
+                            'th',
+                            { className: 'cell-showing', colSpan: '3' },
+                            'Showing: ',
+                            this.isRecent ? 'Recent top 100 campers (past 30 days)' : 'All time 100 campers'
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'tr',
+                        null,
                         _react2.default.createElement(
                             'th',
                             null,
@@ -9998,7 +10011,8 @@ var Table = function (_Component) {
                             null,
                             _react2.default.createElement(
                                 'a',
-                                { href: '#', onClick: this.showCampers.bind(this, true) },
+                                { href: '#',
+                                    onClick: this.showCampers.bind(this, true) },
                                 'Points in past 30 days'
                             )
                         ),
@@ -10007,7 +10021,8 @@ var Table = function (_Component) {
                             null,
                             _react2.default.createElement(
                                 'a',
-                                { href: '#', onClick: this.showCampers.bind(this, false) },
+                                { href: '#',
+                                    onClick: this.showCampers.bind(this, false) },
                                 'All time points'
                             )
                         )
@@ -10088,7 +10103,7 @@ var App = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
+                { 'class': 'container' },
                 _react2.default.createElement(_Navbar2.default, null),
                 _react2.default.createElement(_Table2.default, null),
                 _react2.default.createElement(_Footer2.default, null)
@@ -12139,7 +12154,7 @@ exports = module.exports = __webpack_require__(32)(undefined);
 
 
 // module
-exports.push([module.i, "table.camper-table {\n  width: 95%;\n  margin: 0 auto; }\n  table.camper-table thead {\n    font-size: 12pt;\n    border-bottom: 2px solid; }\n    table.camper-table thead th:nth-child(3),\n    table.camper-table thead th:nth-child(4) {\n      text-align: center; }\n", ""]);
+exports.push([module.i, "table.camper-table {\n  width: 95%;\n  margin: 0 auto; }\n  table.camper-table thead {\n    font-size: 12pt;\n    border-bottom: 2px solid; }\n    table.camper-table thead th.cell-showing {\n      text-align: right;\n      border-bottom: 0; }\n    table.camper-table thead th:nth-child(3),\n    table.camper-table thead th:nth-child(4) {\n      text-align: center; }\n", ""]);
 
 // exports
 

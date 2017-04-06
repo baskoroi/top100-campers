@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom'
 class App extends Component {
     render() {
         return (
-            <div>
+            <div class="container">
                 <Navbar />
                 <Table />
                 <Footer />
