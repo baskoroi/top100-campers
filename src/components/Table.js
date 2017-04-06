@@ -17,10 +17,19 @@ class Table extends Component {
     }
 
     componentWillMount() {
-        axios.get(this.recentUrl).
+        this.getTopCampers(this.recentUrl)
+    }
+
+    getTopCampers(url) {
+        axios.get(url).
             then((response) => {
                 this.setState({ board: response.data })
             })
+    }
+
+    showCampers(isRecent) {
+        this.getTopCampers(isRecent ? 
+            this.recentUrl : this.allTimeUrl)
     }
 
     render() {
@@ -43,8 +52,8 @@ class Table extends Component {
                     <tr>
                         <th>#</th>
                         <th>Camper Name</th>
-                        <th>Points in past 30 days</th>
-                        <th>All time points</th>
+                        <th><a href="#" onClick={this.showCampers.bind(this, true)}>Points in past 30 days</a></th>
+                        <th><a href="#" onClick={this.showCampers.bind(this, false)}>All time points</a></th>
                     </tr>
                 </thead>
                 <tbody>

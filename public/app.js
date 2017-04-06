@@ -9940,11 +9940,21 @@ var Table = function (_Component) {
     _createClass(Table, [{
         key: 'componentWillMount',
         value: function componentWillMount() {
+            this.getTopCampers(this.recentUrl);
+        }
+    }, {
+        key: 'getTopCampers',
+        value: function getTopCampers(url) {
             var _this2 = this;
 
-            _axios2.default.get(this.recentUrl).then(function (response) {
+            _axios2.default.get(url).then(function (response) {
                 _this2.setState({ board: response.data });
             });
+        }
+    }, {
+        key: 'showCampers',
+        value: function showCampers(isRecent) {
+            this.getTopCampers(isRecent ? this.recentUrl : this.allTimeUrl);
         }
     }, {
         key: 'render',
@@ -9986,12 +9996,20 @@ var Table = function (_Component) {
                         _react2.default.createElement(
                             'th',
                             null,
-                            'Points in past 30 days'
+                            _react2.default.createElement(
+                                'a',
+                                { href: '#', onClick: this.showCampers.bind(this, true) },
+                                'Points in past 30 days'
+                            )
                         ),
                         _react2.default.createElement(
                             'th',
                             null,
-                            'All time points'
+                            _react2.default.createElement(
+                                'a',
+                                { href: '#', onClick: this.showCampers.bind(this, false) },
+                                'All time points'
+                            )
                         )
                     )
                 ),
