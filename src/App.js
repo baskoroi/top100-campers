@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+
 import Navbar from './components/Navbar'
+import Table from './components/Table'
+
 import ReactDOM from 'react-dom'
 
 class App extends Component {
@@ -7,6 +10,7 @@ class App extends Component {
         return (
             <div>
                 <Navbar />
+                <Table />
             </div>
         )
     }

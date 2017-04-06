@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import Row from './Row'
+
 import './Table.scss'
 
 class Table extends Component {
@@ -14,6 +16,39 @@ class Table extends Component {
                         <th>All time points</th>
                     </tr>
                 </thead>
+                <tbody>
+                    <Row 
+                        id={1}
+                        name={'asdf'}
+                        lastMonthPoints={123}
+                        allTimePoints={1234} />
+                    <Row 
+                        id={1}
+                        name={'asdf'}
+                        lastMonthPoints={123}
+                        allTimePoints={1234} />
+                    <Row 
+                        id={1}
+                        name={'asdf'}
+                        lastMonthPoints={123}
+                        allTimePoints={1234} />
+
+                    <Row 
+                        id={1}
+                        name={'asdf'}
+                        lastMonthPoints={123}
+                        allTimePoints={1234} />
+                    <Row 
+                        id={1}
+                        name={'asdf'}
+                        lastMonthPoints={123}
+                        allTimePoints={1234} />
+                    <Row 
+                        id={1}
+                        name={'asdf'}
+                        lastMonthPoints={123}
+                        allTimePoints={1234} />
+                </tbody>
             </table>
         )
     }

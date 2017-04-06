@@ -4,7 +4,7 @@
   "description": "Leaderboard showing 100 users of FreeCodeCamp with highest points",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/lite-server"
+    "serve": "./node_modules/.bin/lite-server"
   },
   "keywords": [],
   "author": "Baskoro Indrayana <baskoroindrayana@outlook.com>",
